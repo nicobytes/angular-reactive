@@ -1,0 +1,15 @@
+.content-cart {
+  width: 25%;
+}
+.item-product {
+  display: flex;
+}
+.list {
+  padding: 1rem;
+}
+
+.item-product img {
+  margin-right: .5rem;
+  width: 20%;
+  margin-bottom: 1rem;
+}
