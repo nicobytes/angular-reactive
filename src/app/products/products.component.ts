@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { StoreService } from './../store.service';
 import { Product } from './../product.model';
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private store: StoreService
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class ProductsComponent implements OnInit {
     .subscribe(data => {
       this.products = data;
     })
+  }
+
+  addProductToCart(product: Product) {
+    this.store.addProduct(product);
   }
 
 }

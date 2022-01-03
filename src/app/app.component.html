@@ -1,5 +1,5 @@
 <mat-drawer-container autosize>
-  <mat-drawer class="content-cart" mode="over" position="end">
+  <mat-drawer class="content-cart" mode="side" position="end">
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <span>My List</span>
@@ -10,13 +10,9 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="list">
-      <div class="item-product">
-        <img src="https://placeimg.com/640/480/any?r=0.6623117573936808" alt="">
-        <p>Demo</p>
-      </div>
-      <div class="item-product">
-        <img src="https://placeimg.com/640/480/any?r=0.6623117573936808" alt="">
-        <p>Demo</p>
+      <div class="item-product" *ngFor="let product of (myCart$  | async)">
+        <img [src]="product.images[0]" alt="">
+        <p>{{ product.title }}</p>
       </div>
     </div>
   </mat-drawer>

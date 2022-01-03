@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
-import { CartComponent } from './cart/cart.component';
 import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { MaterialModule } from './material.module';
     AppComponent,
     HeaderComponent,
     ProductsComponent,
-    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+import { StoreService } from './../store.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,8 +10,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() toggleCart = new EventEmitter();
+  myCart$ = this.store.myCart$;
 
-  constructor() { }
+  constructor(
+    private store: StoreService
+  ) { }
 
   ngOnInit(): void {
   }

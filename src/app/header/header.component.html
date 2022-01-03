@@ -5,7 +5,7 @@
       <span class="example-spacer"></span>
       <button
         (click)="handleClickCart()"
-        matBadge="1"
+        [matBadge]="(myCart$ | async)?.length"
         matBadgeColor="accent"
         mat-icon-button
         class="example-icon"
